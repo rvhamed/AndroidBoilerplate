@@ -1,0 +1,11 @@
+#!/bin/sh
+
+commit_msg="$(cat $1)"
+regex='^ABP-[0-9]+: [a-z A-Z0-9.,-/]+$'
+
+if [[ $commit_msg =~ $regex ]]; then
+    echo "Valid commit message"
+else
+    echo "Your commit message is not formatted correctly based on this Regex /$regex/"
+    exit 1
+fi
