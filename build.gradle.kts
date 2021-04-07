@@ -27,6 +27,10 @@ tasks.register("clean").configure {
 }
 
 tasks.register<Copy>("installGitHook") {
+    File(rootProject.rootDir, ".git/hooks/prepare-commit-msg").apply {
+        if(exists())
+            delete()
+    }
     from(File(rootProject.rootDir, "scripts/git-hooks/prepare-commit-msg"))
     into(File(rootProject.rootDir, ".git/hooks"))
     fileMode = 0x777
