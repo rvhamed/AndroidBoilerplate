@@ -6,6 +6,8 @@ import build.BuildType
 import build.BuildTypeRelease
 import build.BuildTypeStage
 import build.BuildTypeDebug
+import build.Modules
+
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
@@ -50,6 +52,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD)
 }
 
 dependencies {
