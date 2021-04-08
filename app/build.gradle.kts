@@ -1,55 +1,33 @@
-import dependencies.AndroidTestLibs
-import dependencies.TestLibs
-import dependencies.Libs
-import build.AndroidSdk
+import build.*
 import build.BuildType
-import build.BuildTypeRelease
-import build.BuildTypeStage
-import build.BuildTypeDebug
+import dependencies.AndroidTestLibs
+import dependencies.Libs
+import dependencies.TestLibs
+
 plugins {
-    id(BuildPlugins.ANDROID_APPLICATION)
+    id(BuildPlugins.BOILERPLATE_PLUGIN)
     id(BuildPlugins.KOTLIN_ANDROID)
 }
 
 android {
-    compileSdkVersion(AndroidSdk.COMPILE_SDK_VERSION)
-
     defaultConfig {
-        minSdkVersion(AndroidSdk.MIN_SDK_VERSION)
-        targetSdkVersion(AndroidSdk.TARGET_SDK_VERSION)
+        applicationId = App.APPLICATION_ID
 
-        applicationId(build.App.APPLICATION_ID)
-        versionCode(build.App.VERSION_CODE)
-        versionName(build.App.VERSION_NAME)
-        buildToolsVersion(AndroidSdk.BUILD_VERSION_TOOLS)
-
-        testInstrumentationRunner(AndroidSdk.TEST_RUNNER)
+        versionCode(App.VERSION_CODE)
+        versionName(App.VERSION_NAME)
     }
 
     buildTypes {
-        getByName(BuildType.RELEASE) {
-            proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
-            isDebuggable = BuildTypeRelease.isDebuggable
-        }
-        create(BuildType.STAGING) {
-            isDebuggable = BuildTypeStage.isDebuggable
-            applicationIdSuffix = BuildTypeStage.APP_SUFFIX_ID
-            versionNameSuffix = BuildTypeStage.VERSION_NAME_SUFFIX
-        }
-        getByName(BuildType.DEBUG) {
-            isDebuggable = BuildTypeDebug.isDebuggable
-            applicationIdSuffix = BuildTypeDebug.APP_SUFFIX_ID
-            versionNameSuffix = BuildTypeDebug.VERSION_NAME_SUFFIX
-        }
+        getByName(BuildType.DEBUG) {}
+        getByName(BuildType.STAGING) {}
+        getByName(BuildType.RELEASE) {}
+    }
 
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD)
 }
 
 dependencies {
@@ -58,7 +36,7 @@ dependencies {
     implementation(Libs.APPCOMPAT)
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAIN_LAYOUT)
-    testImplementation (TestLibs.JUNIT)
+    testImplementation(TestLibs.JUNIT)
     androidTestImplementation(AndroidTestLibs.JUNIT)
     androidTestImplementation(AndroidTestLibs.ESPRESSO)
 }

@@ -8,6 +8,8 @@ package build
 object Modules {
     const val APP = ":app"
 
-    object Features
+    object Features{
+        const val DASHBOARD = ":features:dashboard"
+    }
 
 }

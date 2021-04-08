@@ -1,6 +1,6 @@
 package dependencies
 
-import Versions
+import DependenciesVersions
 
 /**
  *
@@ -9,6 +9,6 @@ import Versions
  */
 object AndroidTestLibs{
 
-    const val JUNIT = "androidx.test.ext:junit:${Versions.JUNIT_EXT}"
-    const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+    const val JUNIT = "androidx.test.ext:junit:${DependenciesVersions.JUNIT_EXT}"
+    const val ESPRESSO = "androidx.test.espresso:espresso-core:${DependenciesVersions.ESPRESSO}"
 }
