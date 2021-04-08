@@ -1,6 +1,6 @@
 package dependencies
 
-import Versions
+import DependenciesVersions
 
 /**
  *
@@ -9,10 +9,10 @@ import Versions
  */
 
 object Libs {
-    const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
-    const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
-    const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.APPCOMPAT}"
-    const val MATERIAL= "com.google.android.material:material:${Versions.MATERIAL}"
-    const val CONSTRAIN_LAYOUT= "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAIN_LAYOUT}"
+    const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:${DependenciesVersions.KOTLIN}"
+    const val CORE_KTX = "androidx.core:core-ktx:${DependenciesVersions.CORE_KTX}"
+    const val APPCOMPAT = "androidx.appcompat:appcompat:${DependenciesVersions.APPCOMPAT}"
+    const val MATERIAL= "com.google.android.material:material:${DependenciesVersions.MATERIAL}"
+    const val CONSTRAIN_LAYOUT= "androidx.constraintlayout:constraintlayout:${DependenciesVersions.CONSTRAIN_LAYOUT}"
 
 }

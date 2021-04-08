@@ -1,6 +1,6 @@
 package dependencies
 
-import Versions
+import DependenciesVersions
 
 /**
  *
@@ -9,5 +9,5 @@ import Versions
  */
 object TestLibs{
 
-    const val JUNIT = "junit:junit:${Versions.JUNIT}"
+    const val JUNIT = "junit:junit:${DependenciesVersions.JUNIT}"
 }
