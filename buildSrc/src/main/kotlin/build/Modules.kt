@@ -10,6 +10,7 @@ object Modules {
 
     object Features{
         const val DASHBOARD = ":features:dashboard"
+        const val LAUNCHERS = ":features:launchers"
     }
 
 }

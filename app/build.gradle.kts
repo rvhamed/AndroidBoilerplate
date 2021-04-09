@@ -27,7 +27,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD)
+    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD, Modules.Features.LAUNCHERS)
 }
 
 dependencies {

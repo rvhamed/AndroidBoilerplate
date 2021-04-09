@@ -1,6 +1,7 @@
 include(
     ":app",
-    ":features:dashboard"
+    ":features:dashboard",
+    ":features:launchers"
 )
 
 rootProject.name = "Boilerplate"
