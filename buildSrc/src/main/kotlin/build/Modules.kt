@@ -13,4 +13,7 @@ object Modules {
         const val LAUNCHERS = ":features:launchers"
     }
 
+    object Common{
+        const val UI = ":common:ui"
+    }
 }

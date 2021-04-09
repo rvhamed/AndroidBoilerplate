@@ -14,5 +14,5 @@ object Libs {
     const val APPCOMPAT = "androidx.appcompat:appcompat:${DependenciesVersions.APPCOMPAT}"
     const val MATERIAL= "com.google.android.material:material:${DependenciesVersions.MATERIAL}"
     const val CONSTRAIN_LAYOUT= "androidx.constraintlayout:constraintlayout:${DependenciesVersions.CONSTRAIN_LAYOUT}"
-
+    const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${DependenciesVersions.FRAGMENT_KTX}"
 }

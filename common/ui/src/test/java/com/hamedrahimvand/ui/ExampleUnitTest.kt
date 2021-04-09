@@ -1,4 +1,4 @@
-package com.hamedrahimvand.views
+package com.hamedrahimvand.ui
 
 import org.junit.Test
 

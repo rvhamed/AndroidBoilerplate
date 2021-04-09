@@ -1,6 +1,5 @@
 package commons
 
-import build.*
 import dependencies.*
 import build.AndroidSdk
 import build.BuildType
@@ -54,7 +53,8 @@ android {
 
 dependencies {
     implementation(project(Modules.APP))
-//    implementation(project(Modules.Commons.UI))
+    implementation(project(Modules.Common.UI))
+
     implementation(Libs.KOTLIN)
     implementation(Libs.APPCOMPAT)
     implementation(Libs.MATERIAL)
