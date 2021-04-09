@@ -4,7 +4,7 @@
  *@since 4/5/21
  */
 object DependenciesVersions {
-    const val KOTLIN = "1.4.30"
+    const val KOTLIN = "1.4.32"
 
     const val CORE_KTX = "1.3.2"
     const val APPCOMPAT = "1.2.0"

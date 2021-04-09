@@ -1,3 +1,3 @@
 plugins {
-    id(BuildPlugins.BOILERPLATE_ANDROID_DYNAMIC_FEATURE_PLUGIN)
+    id(BuildPlugins.ANDROID_DYNAMIC_FEATURE_PLUGIN)
 }

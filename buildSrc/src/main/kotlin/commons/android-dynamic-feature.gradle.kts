@@ -1,20 +1,21 @@
 package commons
 
+import build.*
+import dependencies.*
 import build.AndroidSdk
 import build.BuildType
 import build.BuildTypeDebug
 import build.BuildTypeStage
-import com.android.build.gradle.BaseExtension
-import org.gradle.api.JavaVersion
-import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import build.Modules
+import dependencies.Libs
+import dependencies.AndroidTestLibs
 
-/**
- * Main configuration for all modules.
- *@author Hamed.Rahimvand
- *@since 4/8/21
- */
-fun Project.configureAndroid() = this.extensions.getByType<AndroidBaseExtension>().run {
+plugins {
+    id("com.android.dynamic-feature")
+    id("kotlin-android")
+}
+
+android {
 
     compileSdkVersion(AndroidSdk.COMPILE_SDK_VERSION)
 
@@ -51,5 +52,15 @@ fun Project.configureAndroid() = this.extensions.getByType<AndroidBaseExtension>
     }
 }
 
-internal typealias AndroidBaseExtension = BaseExtension
+dependencies {
+    implementation(project(Modules.APP))
+//    implementation(project(Modules.Commons.UI))
+    implementation(Libs.KOTLIN)
+    implementation(Libs.APPCOMPAT)
+    implementation(Libs.MATERIAL)
+    implementation(Libs.CONSTRAIN_LAYOUT)
 
+    testImplementation(TestLibs.JUNIT)
+    androidTestImplementation(AndroidTestLibs.JUNIT)
+    androidTestImplementation(AndroidTestLibs.ESPRESSO)
+}

@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/dashboard" />
             <option value="$PROJECT_DIR$/features/launchers" />
+            <option value="$PROJECT_DIR$/views" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,4 +1,3 @@
-
 plugins.apply(BuildPlugins.GIT_HOOKS)
 
 allprojects {

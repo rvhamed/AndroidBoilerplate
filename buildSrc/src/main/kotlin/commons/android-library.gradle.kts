@@ -1,23 +1,20 @@
-import build.*
+package commons
+
+import build.AndroidSdk
 import build.BuildType
-import dependencies.AndroidTestLibs
+import build.BuildTypeDebug
+import build.BuildTypeStage
 import dependencies.Libs
-import dependencies.TestLibs
 
 plugins {
-    id(BuildPlugins.ANDROID_APPLICATION)
-    id(BuildPlugins.KOTLIN_ANDROID)
+    id("com.android.library")
+    id("kotlin-android")
 }
 
 android {
     compileSdkVersion(AndroidSdk.COMPILE_SDK_VERSION)
 
     defaultConfig {
-        applicationId = App.APPLICATION_ID
-
-        versionCode(App.VERSION_CODE)
-        versionName(App.VERSION_NAME)
-
         minSdkVersion(AndroidSdk.MIN_SDK_VERSION)
         targetSdkVersion(AndroidSdk.TARGET_SDK_VERSION)
         buildToolsVersion(AndroidSdk.BUILD_VERSION_TOOLS)
@@ -33,13 +30,11 @@ android {
     buildTypes {
         getByName(BuildType.DEBUG) {
             isDebuggable = BuildTypeDebug.isDebuggable
-            applicationIdSuffix = BuildTypeDebug.APP_SUFFIX_ID
             versionNameSuffix = BuildTypeDebug.VERSION_NAME_SUFFIX
         }
 
         create(BuildType.STAGING) {
             initWith(getByName(BuildType.DEBUG))
-            applicationIdSuffix = BuildTypeStage.APP_SUFFIX_ID
             versionNameSuffix = BuildTypeStage.VERSION_NAME_SUFFIX
         }
 
@@ -48,21 +43,8 @@ android {
         }
 
     }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-
-    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD, Modules.Features.LAUNCHERS)
 }
 
 dependencies {
     implementation(Libs.KOTLIN)
-    implementation(Libs.CORE_KTX)
-    implementation(Libs.APPCOMPAT)
-    implementation(Libs.MATERIAL)
-    implementation(Libs.CONSTRAIN_LAYOUT)
-    testImplementation(TestLibs.JUNIT)
-    androidTestImplementation(AndroidTestLibs.JUNIT)
-    androidTestImplementation(AndroidTestLibs.ESPRESSO)
 }
