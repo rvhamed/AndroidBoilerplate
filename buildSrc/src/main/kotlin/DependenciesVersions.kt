@@ -11,6 +11,7 @@ object DependenciesVersions {
     const val MATERIAL = "1.3.0"
     const val CONSTRAIN_LAYOUT = "2.0.4"
     const val FRAGMENT_KTX = "1.2.5"
+    const val NAVIGATION = "2.3.5"
 
     const val JUNIT = "4.13.2"
     const val JUNIT_EXT = "1.1.2"

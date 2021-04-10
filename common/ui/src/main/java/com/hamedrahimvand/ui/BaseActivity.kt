@@ -1,11 +1,11 @@
 package com.hamedrahimvand.ui
 
 import androidx.annotation.LayoutRes
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  *
  *@author Hamed.Rahimvand
  *@since 4/9/21
  */
-abstract class BaseFragment(@LayoutRes layoutId:Int): Fragment(layoutId)
+abstract class BaseActivity(@LayoutRes layoutId: Int): AppCompatActivity()

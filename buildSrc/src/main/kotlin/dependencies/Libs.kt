@@ -15,4 +15,8 @@ object Libs {
     const val MATERIAL= "com.google.android.material:material:${DependenciesVersions.MATERIAL}"
     const val CONSTRAIN_LAYOUT= "androidx.constraintlayout:constraintlayout:${DependenciesVersions.CONSTRAIN_LAYOUT}"
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${DependenciesVersions.FRAGMENT_KTX}"
+    const val NAVIGATION_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${DependenciesVersions.NAVIGATION}"
+    const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${DependenciesVersions.NAVIGATION}"
+    const val NAVIGATION_DYNAMIC_FEATURE = "androidx.navigation:navigation-dynamic-features-fragment:${DependenciesVersions.NAVIGATION}"
+
 }

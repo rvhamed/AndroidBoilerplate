@@ -5,5 +5,6 @@ plugins {
 }
 
 dependencies{
-    implementation(Libs.FRAGMENT_KTX)
+    api(Libs.APPCOMPAT)
+    api(Libs.FRAGMENT_KTX)
 }

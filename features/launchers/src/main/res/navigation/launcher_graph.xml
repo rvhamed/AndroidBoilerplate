@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/launcher_graph"
+    app:startDestination="@id/launchersListFragment">
+
+
+    <fragment
+        android:id="@+id/launchersListFragment"
+        android:name="com.hamedrahimvand.launchers.LaunchersListFragment"
+        android:label="LaunchersListFragment">
+        <action
+            android:id="@+id/action_launchersListFragment_to_launcherDetailsFragment2"
+            app:destination="@id/launcherDetailsFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="launcher://list" />
+    </fragment>
+    <fragment
+        android:id="@+id/launcherDetailsFragment"
+        android:name="com.hamedrahimvand.launchers.LauncherDetailsFragment"
+        android:label="LauncherDetailsFragment" />
+</navigation>

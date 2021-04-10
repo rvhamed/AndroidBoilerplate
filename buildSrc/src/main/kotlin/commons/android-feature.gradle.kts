@@ -10,8 +10,10 @@ import dependencies.Libs
 import dependencies.AndroidTestLibs
 
 plugins {
-    id("com.android.dynamic-feature")
+    id("com.android.library")
     id("kotlin-android")
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -34,13 +36,11 @@ android {
     buildTypes {
         getByName(BuildType.DEBUG) {
             isDebuggable = BuildTypeDebug.isDebuggable
-            applicationIdSuffix = BuildTypeDebug.APP_SUFFIX_ID
             versionNameSuffix = BuildTypeDebug.VERSION_NAME_SUFFIX
         }
 
         create(BuildType.STAGING) {
             initWith(getByName(BuildType.DEBUG))
-            applicationIdSuffix = BuildTypeStage.APP_SUFFIX_ID
             versionNameSuffix = BuildTypeStage.VERSION_NAME_SUFFIX
         }
 
@@ -52,13 +52,15 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.APP))
     implementation(project(Modules.Common.UI))
 
-    implementation(Libs.KOTLIN)
-    implementation(Libs.APPCOMPAT)
-    implementation(Libs.MATERIAL)
-    implementation(Libs.CONSTRAIN_LAYOUT)
+    api(Libs.KOTLIN)
+    api(Libs.APPCOMPAT)
+    api(Libs.MATERIAL)
+    api(Libs.CONSTRAIN_LAYOUT)
+
+    api(Libs.NAVIGATION_UI)
+    api(Libs.NAVIGATION_FRAGMENT)
 
     testImplementation(TestLibs.JUNIT)
     androidTestImplementation(AndroidTestLibs.JUNIT)

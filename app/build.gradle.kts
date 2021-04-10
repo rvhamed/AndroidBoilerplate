@@ -53,7 +53,6 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dynamicFeatures = mutableSetOf(Modules.Features.DASHBOARD, Modules.Features.LAUNCHERS)
 }
 
 dependencies {
@@ -62,6 +61,15 @@ dependencies {
     implementation(Libs.APPCOMPAT)
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAIN_LAYOUT)
+
+    implementation(project(Modules.Common.UI))
+
+    implementation(project(Modules.Features.DASHBOARD))
+    implementation(project(Modules.Features.LAUNCHERS))
+
+    implementation(Libs.NAVIGATION_FRAGMENT)
+    implementation(Libs.NAVIGATION_UI)
+
     testImplementation(TestLibs.JUNIT)
     androidTestImplementation(AndroidTestLibs.JUNIT)
     androidTestImplementation(AndroidTestLibs.ESPRESSO)
